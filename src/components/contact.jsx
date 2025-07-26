@@ -44,8 +44,7 @@ export const Contact = (props) => {
               <div className="section-title">
                 <h2>Get In Touch</h2>
                 <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
+                  Ready to transform your business with custom software? Contact us today for a free consultation or to discuss your software needs.
                 </p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>

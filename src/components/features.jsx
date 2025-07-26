@@ -6,6 +6,9 @@ export const Features = (props) => {
       <div className="container">
         <div className="col-md-10 col-md-offset-1 section-title">
           <h2>Features</h2>
+          <p>
+            Discover what sets us apart as your trusted software solutions partner.
+          </p>
         </div>
         <div className="row">
           {props.data
