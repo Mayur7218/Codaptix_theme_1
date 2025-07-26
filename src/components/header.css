@@ -1,0 +1,45 @@
+.container_header {
+  width: 100%;
+  max-width: 980px;
+  background-color: #1a2233;
+  padding: 200px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-height: 100vh;
+  height: 85vh;
+  margin-top: 6vh;
+}
+.overlay{
+      background-color: rgba(26,34,51,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding : 40px 20px;
+            height:100vh
+}
+
+/* 📱 MOBILE OVERRIDE */
+@media (max-width: 768px) {
+
+ 
+  .container_header {
+    padding: 80px 20px;
+    height: auto;
+    margin-top: 1vh;
+  }
+
+  .container_header h1 {
+    font-size: 20px;
+  }
+
+  .container_header p {
+    font-size: 14px;
+  }
+
+  .container_header a {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

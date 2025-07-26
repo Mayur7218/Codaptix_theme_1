@@ -1,0 +1,35 @@
+
+
+@media (max-width: 768px) {
+  .col-md-8,
+  .col-md-3,
+  .col-md-offset-1,
+  .col-md-12 {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .section-title,
+  .contact-form,
+  .contact-info,
+  .social {
+    text-align: center;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+  }
+
+  #contact .btn-custom{
+    margin: 30px 47px;
+  }
+  .btn-custom {
+    width: 100%;
+    max-width: 300px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+}
