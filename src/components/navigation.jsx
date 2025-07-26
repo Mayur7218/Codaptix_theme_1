@@ -1,59 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+import './Navigation.css'
+export const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export const Navigation = (props) => {
+  const handleToggle = () => setIsOpen(!isOpen);
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
-          <a className="navbar-brand page-scroll" href="#page-top" style={{float: 'left', fontWeight: 800, letterSpacing: '2px'}}>
-            codaptix
-          </a>{" "}
+          <a
+            className="navbar-brand page-scroll"
+            href="#page-top"
+            style={{
+              float: "left",
+              fontWeight: 800,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              color: "#fff",
+            }}
+          >
+            Codaptix
+          </a>
           <button
             type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false"
-            style={{float: 'right'}}
+            className={`navbar-toggle ${isOpen ? "" : "collapsed"}`}
+            onClick={handleToggle}
+            aria-expanded={isOpen}
+            style={{
+              float: "right",
+              border: "1px solid #fff",
+              marginTop: "8px",
+            }}
           >
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
           </button>
         </div>
 
         <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-          style={{float: 'right'}}
+          className={`collapse navbar-collapse ${isOpen ? "in" : ""}`}
+          id="navbar"
+          style={{
+            float: "right",
+            backgroundColor: "#1a2233",
+            padding: isOpen ? "10px 0" : "0",
+          }}
         >
           <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="#features" className="page-scroll">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="page-scroll">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Contact
-              </a>
-            </li>
+            {["features", "about", "services", "team", "contact"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item}`}
+                  className="page-scroll"
+                  onClick={() => setIsOpen(false)} // close menu on link click
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
